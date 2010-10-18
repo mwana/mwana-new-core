@@ -1,0 +1,8 @@
+[router]: Starting RapidSMS...
+[app/handlers]: Registered: LanguageHandler, RegisterHandler, EchoHandler, PingHandler
+[router]: starting backend
+[router]: Started
+[router]: Caught KeyboardInterrupt
+[router]: Stopping...
+[router]: backend <backend: message_tester> terminated normally
+[router]: Stopped
