@@ -103,6 +103,10 @@ RAPIDSMS_TABS = [
     ("rapidsms.contrib.locations.views.locations",          "Map"),
     ("rapidsms.contrib.scheduler.views.index",              "Event Scheduler"),
     ("rapidsms.contrib.httptester.views.generate_identity", "Message Tester"),
+    ('mwana.apps.supply.views.dashboard', 'Supplies'),
+    ('mwana.apps.labresults.views.dashboard', 'Results160'),
+    ('mwana.apps.labresults.views.mwana_reports', 'Reports'),
+
 ]
 
 # TODO: make a better default response, include other apps, and maybe 
@@ -145,7 +149,7 @@ SITE_ID = 1
 
 # the default log settings are very noisy.
 LOG_LEVEL   = "DEBUG"
-LOG_FILE    = "rapidsms.log"
+LOG_FILE    = "logs/rapidsms.log"
 LOG_FORMAT  = "[%(name)s]: %(message)s"
 LOG_SIZE    = 8192 # 8192 bytes = 64 kb
 LOG_BACKUPS = 256 # number of logs to keep

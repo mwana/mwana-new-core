@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import *
 from django.conf import settings
 from django.contrib import admin
+import mwana.apps.labresults.views
 
 admin.autodiscover()
 
@@ -18,7 +19,9 @@ urlpatterns = patterns('',
     url(r'^$', 'rapidsms.views.dashboard', name='rapidsms-dashboard'),
 
     # Mwana app URLs
-    (r'^$', include('mwana.apps.labresults.urls')),
+    (r'^labresults/', include('mwana.apps.labresults.urls')),
+    (r'^supplies/', include('mwana.apps.supply.urls')),
+    url(r"^reports/$", mwana.apps.labresults.views.mwana_reports, name="mwana_reports"),
     # RapidSMS contrib app URLs
     (r'^ajax/', include('rapidsms.contrib.ajax.urls')),
     (r'^export/', include('rapidsms.contrib.export.urls')),
@@ -28,6 +31,7 @@ urlpatterns = patterns('',
     (r'^messaging/', include('rapidsms.contrib.messaging.urls')),
     (r'^registration/', include('rapidsms.contrib.registration.urls')),
     (r'^scheduler/', include('rapidsms.contrib.scheduler.urls')),
+    
 )
 
 if settings.DEBUG:

@@ -11,7 +11,7 @@ from rapidsms.utils import web_message
 from rapidsms.contrib.messaging.utils import send_message
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from django.contrib.auth.views import context_instance
+#from django.contrib.auth.views import context_instance
 
 @require_GET
 def dashboard(request):
