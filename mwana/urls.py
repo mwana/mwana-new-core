@@ -17,6 +17,8 @@ urlpatterns = patterns('',
     (r'^account/', include('rapidsms.urls.login_logout')),
     url(r'^$', 'rapidsms.views.dashboard', name='rapidsms-dashboard'),
 
+    # Mwana app URLs
+    (r'^$', include('mwana.apps.labresults.urls')),
     # RapidSMS contrib app URLs
     (r'^ajax/', include('rapidsms.contrib.ajax.urls')),
     (r'^export/', include('rapidsms.contrib.export.urls')),

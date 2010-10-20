@@ -11,8 +11,11 @@
 # see: http://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "rapidsms.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "mwanadb",
+        "USER": "rapidsms",
+        "PASSWORD": "rapid",
+        "HOST": "localhost",
     }
 }
 
@@ -46,6 +49,7 @@ INSTALLED_BACKENDS = {
 # by default. you may wish to remove some and/or add your own.
 INSTALLED_APPS = [
 
+    #'south',
     # the essentials.
     "django_nose",
     "djtables",
@@ -181,6 +185,15 @@ TEST_EXCLUDED_APPS = [
 # this is handy, but too magical for the taste of some. (remove it?)
 #ROOT_URLCONF = "rapidsms.djangoproject.urls"
 ROOT_URLCONF = "urls"
+
+
+
+# For Schema Migration
+SOUTH_MIGRATION_MODULES = {
+    'rapidsms': 'testextensions_main.migrations',
+}
+
+
 
 # since we might hit the database from any thread during testing, the
 # in-memory sqlite database isn't sufficient. it spawns a separate
